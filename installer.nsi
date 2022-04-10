@@ -16,7 +16,7 @@ Var /GLOBAL switch_overwrite
 
 !define PRODUCT_NAME "ZipperXYZ's ReShade-Preset"
 !define PRODUCT_DESCRIPTION "ReShade presets made by ZipperXYZ."
-!define COPYRIGHT "Copyright © 2022 sitiom, ZipperXYZ"
+!define COPYRIGHT "Copyright © 2022 sitiom, ZipperXYZ, Extravi"
 !define VERSION "1.0.0"
 VIProductVersion "${VERSION}.0"
 VIAddVersionKey "ProductName" "${PRODUCT_NAME}"
