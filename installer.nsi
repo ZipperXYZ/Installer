@@ -14,11 +14,10 @@ Var /GLOBAL switch_overwrite
 ####################################################################
 # File Info
 
-!define PRODUCT_NAME "Extravi's ReShade-Preset"
-!define PRODUCT_DESCRIPTION "ReShade presets made by Extravi."
-!define COPYRIGHT "Copyright © 2022 sitiom, Extravi"
-!define VERSION "2.0.0"
-
+!define PRODUCT_NAME "ZipperXYZ's ReShade-Preset"
+!define PRODUCT_DESCRIPTION "ReShade presets made by ZipperXYZ."
+!define COPYRIGHT "Copyright © 2022 sitiom, ZipperXYZ"
+!define VERSION "1.0.0"
 VIProductVersion "${VERSION}.0"
 VIAddVersionKey "ProductName" "${PRODUCT_NAME}"
 VIAddVersionKey "ProductVersion" "${VERSION}"
@@ -48,15 +47,15 @@ InstType "Full";1
 ####################################################################
 # Pages
 
-!define MUI_ICON "extravi-reshade.ico"
-!define MUI_UNICON "extravi-reshade.ico"
+!define MUI_ICON "FORSHADER.ico"
+!define MUI_UNICON "FORSHADER.ico"
 !define MUI_ABORTWARNING
-!define MUI_WELCOMEFINISHPAGE_BITMAP "extravi-reshade.bmp"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "realimageshader.bmp"
 !define MUI_WELCOMEPAGE_TEXT "This will install ${PRODUCT_NAME} on your computer.$\r$\n\
 $\r$\n\
 Before continuing, ensure that Roblox is closed.$\r$\n\
 $\r$\n\
-There may be issues with the setup. If that's the case, it's recommended that you ask your questions on Extravi's Discord server.$\r$\n\
+There may be issues with the setup. If that's the case, it's recommended that you ask your questions on ZipperXYZ's Discord server.$\r$\n\
 $\r$\n\
 Click Next to continue."
 !define MUI_LICENSEPAGE_RADIOBUTTONS
@@ -74,7 +73,7 @@ Click Finish to exit Setup."
 !define MUI_FINISHPAGE_RUN_FUNCTION "OpenLink"
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "Extravi's ReShade-Preset\license.txt"
+!insertmacro MUI_PAGE_LICENSE "ZipperXYZ preset's\license.txt"
 !insertmacro MUI_PAGE_COMPONENTS
 !define MUI_PAGE_CUSTOMFUNCTION_SHOW "StartTaskbarProgress"
 !insertmacro MUI_PAGE_INSTFILES
@@ -106,7 +105,7 @@ Section "ReShade (required)"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\extravi-reshade-presets" "QuietUninstallString" "$INSTDIR\uninstall.exe /S"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\extravi-reshade-presets" "UninstallString" "$INSTDIR\uninstall.exe"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\extravi-reshade-presets" "InstallLocation" "$INSTDIR"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\extravi-reshade-presets" "Publisher" "Extravi"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\extravi-reshade-presets" "Publisher" "ZipperXYZ"
 
   NSCurl::http GET "https://github.com/crosire/reshade-shaders/archive/refs/heads/master.zip" "reshade-shaders-master.zip" /END
   nsisunz::Unzip "reshade-shaders-master.zip" "$INSTDIR"
@@ -135,24 +134,21 @@ Section "ReShade (required)"
 
   SetOutPath $robloxPath
 
-  File "Extravi's ReShade-Preset\dxgi.dll"
-  File "Extravi's ReShade-Preset\ReShade.log"
-  File "Extravi's ReShade-Preset\ReShade.ini"
-  File "Extravi's ReShade-Preset\NunitoSans-Regular.ttf"
-  File "Extravi's ReShade-Preset\ClientSettings.zip"
+  File "ZipperXYZ preset's\dxgi.dll"
+  File "ZipperXYZ preset's\ReShade.log"
+  File "ZipperXYZ preset's\ReShade.ini"
+  File "ZipperXYZ preset's\NunitoSans-Regular.ttf"
+  File "ZipperXYZ preset's\ClientSettings.zip"
   nsisunz::Unzip "$robloxPath\ClientSettings.zip" "$robloxPath"
   Delete "$robloxPath\ClientSettings.zip"
 SectionEnd
 
 SectionGroup /e "Presets"
-  Section "Extravi's ReShade-Presets"
+  Section "ZipperXYZ preset's"
     SectionIn 1
-    File "Extravi's ReShade-Preset\Extravi's ReShade-Preset Added Bloom Blurred SSR.ini"
-    File "Extravi's ReShade-Preset\Extravi's ReShade-Preset Added Bloom Glossy.ini"
-    File "Extravi's ReShade-Preset\Extravi's ReShade-Preset Added Bloom.ini"
-    File "Extravi's ReShade-Preset\Extravi's ReShade-Preset No Added Bloom Blurred SSR.ini"
-    File "Extravi's ReShade-Preset\Extravi's ReShade-Preset No Added Bloom Glossy.ini"
-    File "Extravi's ReShade-Preset\Extravi's ReShade-Preset No Added Bloom.ini"
+    File "ZipperXYZ preset's\Zipper colorful shader (Low).ini"
+    File "ZipperXYZ preset's\Zipper colorful shader (medium).ini"
+    File "ZipperXYZ preset's\Zipper colorful shader.ini"
   SectionEnd
 SectionGroupEnd
 
@@ -164,12 +160,9 @@ Section "uninstall"
 
   DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\extravi-reshade-presets"
 
-  Delete "$robloxPath\Extravi's ReShade-Preset Added Bloom Blurred SSR.ini"
-  Delete "$robloxPath\Extravi's ReShade-Preset Added Bloom Glossy.ini"
-  Delete "$robloxPath\Extravi's ReShade-Preset Added Bloom.ini"
-  Delete "$robloxPath\Extravi's ReShade-Preset No Added Bloom Blurred SSR.ini"
-  Delete "$robloxPath\Extravi's ReShade-Preset No Added Bloom Glossy.ini"
-  Delete "$robloxPath\Extravi's ReShade-Preset No Added Bloom.ini"
+  Delete "$robloxPath\Zipper colorful shader (Low).ini"
+  Delete "$robloxPath\Zipper colorful shader (medium).ini"
+  Delete "$robloxPath\Zipper colorful shader.ini"
   Delete "$robloxPath\ReShade.ini"
   Delete "$robloxPath\ReShadePreset.ini"
   RMDir /r "$robloxPath\reshade-shaders"
