@@ -146,8 +146,8 @@ SectionEnd
 SectionGroup /e "Presets"
   Section "ZipperXYZ preset's"
     SectionIn 1
-    File "ZipperXYZ preset's\Zipper colorful shader (Low).ini"
-    File "ZipperXYZ preset's\Zipper colorful shader (medium).ini"
+    File "ZipperXYZ preset's\Zipper colorful shader (Low2).ini"
+    File "ZipperXYZ preset's\Zipper colorful shader (bloomy).ini"
     File "ZipperXYZ preset's\Zipper colorful shader.ini"
   SectionEnd
 SectionGroupEnd
